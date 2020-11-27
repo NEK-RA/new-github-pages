@@ -84,6 +84,11 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  head () {
+    return {
+      title: 'About me'
+    }
   }
 }
 </script>

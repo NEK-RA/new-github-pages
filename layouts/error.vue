@@ -23,8 +23,8 @@ export default {
   },
   data () {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
+      pageNotFound: 'Error 404 - Page Not Found',
+      otherError: 'Unexpected error occurred :c'
     }
   },
   head () {

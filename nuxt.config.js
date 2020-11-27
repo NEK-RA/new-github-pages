@@ -6,8 +6,8 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - nuxt-npx-template',
-    title: 'nuxt-npx-template',
+    titleTemplate: '%s | NEK-RA on Github',
+    title: 'NEK-RA on Github',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
