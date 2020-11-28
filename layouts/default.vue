@@ -2,9 +2,15 @@
   <v-app dark>
     <v-navigation-drawer
       v-model="drawer"
+      clipped
       fixed
       app
     >
+      <v-flex text-center class="mt-5 mb-3">
+        <img src="/favicon.ico" alt="Here is logo (128x128)">
+        <h2>Menu</h2>
+      </v-flex>
+
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -21,28 +27,29 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <hr>
-      <br>
-      <p class="ml-5">
-        This page built with:
+
+      <div class="ml-4 mt-3">
+        This site built with:
         <ul>
           <li>
             VueJS framework
           </li>
           <li>
-            Nuxt Static Site Generator
+            NuxtJS Static Site Generator
           </li>
           <li>
             Vuetify UI components
           </li>
         </ul>
-      </p>
+      </div>
     </v-navigation-drawer>
     <v-app-bar
+      clipped-left
       fixed
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-spacer />
       <v-toolbar-title v-text="pageTitle" />
       <v-spacer />
     </v-app-bar>
@@ -52,10 +59,11 @@
       </v-container>
     </v-main>
     <v-footer
-      :absolute="!fixed"
       app
     >
-      <span>NEK-RA (Ryoidenshi Aokigahara) &copy; {{ new Date().getFullYear() }}</span>
+      <v-flex text-center>
+        <div>NEK-RA (Ryoidenshi Aokigahara) <br> &copy; 2017 — {{ new Date().getFullYear() }}</div>
+      </v-flex>
     </v-footer>
   </v-app>
 </template>
@@ -64,13 +72,11 @@
 export default {
   data () {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-chart-bubble',
-          title: 'Welcome',
+          title: 'About / Contact',
           to: '/'
         },
         {
@@ -82,6 +88,11 @@ export default {
           icon: 'mdi-apps',
           title: 'Projects',
           to: '/Projects'
+        },
+        {
+          icon: 'mdi-account-group',
+          title: 'RJ-Leisure',
+          to: '/rj-l'
         }
       ]
     }
