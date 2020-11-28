@@ -75,7 +75,7 @@ export default {
       drawer: false,
       items: [
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-account-details',
           title: 'About / Contact',
           to: '/'
         },

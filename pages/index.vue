@@ -1,6 +1,7 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
+    <v-col cols="12" sm="8" md="8">
+      <Person />
       <v-card>
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
@@ -73,9 +74,10 @@
 </template>
 
 <script>
-
+import Person from '@/components/Person'
 export default {
   components: {
+    Person
   },
   head () {
     return {
