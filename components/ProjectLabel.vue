@@ -13,9 +13,10 @@
             <v-chip
               v-for="tag in user.tags"
               :key="tag"
+              x-small
               class="ml-1 mr-1"
             >
-              {{ tag }}
+              {{ tag.toUpperCase() }}
             </v-chip>
           </v-list-item-subtitle>
         </v-list-item-content>

@@ -4,7 +4,7 @@
       <PersonLabel :user="user" />
       <v-card>
         <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
+          Welcome here :)
         </v-card-title>
         <v-card-text>
           Some text here
@@ -23,12 +23,12 @@ export default {
   data () {
     return {
       user: {
-        name: 'Ryoidenshi Aokigahara (NEK-RA)',
+        name: 'NEK-RA',
         avatar: 'https://i.comss.pics/2020/11/29/100x100-min.th.jpg',
-        shortly: 'Newbee developer',
+        shortly: 'Beginner developer, a little bit everything',
         tags: [
-          'Rus',
-          'Eng',
+          'Russian',
+          'English',
           'Java',
           'VueJS'
         ]
