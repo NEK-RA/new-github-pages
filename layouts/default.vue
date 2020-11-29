@@ -18,6 +18,7 @@
           :to="item.to"
           router
           exact
+          :disabled="item.disabled"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -62,7 +63,7 @@
       app
     >
       <v-flex text-center>
-        <div>NEK-RA (Ryoidenshi Aokigahara) <br> &copy; 2017 — {{ new Date().getFullYear() }}</div>
+        <div>NEK-RA (prev. Ryoidenshi Aokigahara) <br> &copy; 2017 — {{ new Date().getFullYear() }}</div>
       </v-flex>
     </v-footer>
   </v-app>
@@ -77,22 +78,26 @@ export default {
         {
           icon: 'mdi-account-details',
           title: 'About / Contact',
-          to: '/'
+          to: '/',
+          disabled: false
         },
         {
           icon: 'mdi-newspaper-variant',
           title: 'Blog / News',
-          to: '/blog'
+          to: '/blog',
+          disabled: true
         },
         {
           icon: 'mdi-apps',
           title: 'Projects',
-          to: '/Projects'
+          to: '/Projects',
+          disabled: true
         },
         {
           icon: 'mdi-account-group',
           title: 'RJ-Leisure',
-          to: '/rj-l'
+          to: '/rj-l',
+          disabled: true
         }
       ]
     }

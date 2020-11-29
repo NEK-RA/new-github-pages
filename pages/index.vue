@@ -4,10 +4,54 @@
       <PersonLabel :user="user" />
       <v-card>
         <v-card-title class="headline">
-          Welcome here :)
+          That's about me:
         </v-card-title>
         <v-card-text>
-          Some text here
+          <h2>Nickname</h2>
+          My nickname "NEK-RA" built from initials of my real name and my previous nickname, that's why it's strange
+          <br><br>
+          <h2>Languages</h2>
+          I'm beginner developer from Russia. I'm newbie in next languages now:
+          <ul>
+            <li
+              v-for="lang in langs"
+              :key="lang"
+            >
+              <v-chip small>
+                {{ lang }}
+              </v-chip>
+            </li>
+          </ul>
+          I'm a little bit everything, but more familiar with <v-chip>Java</v-chip> and <v-chip>JavaScript</v-chip>
+          <br><br>
+          <h2>Achivements</h2>
+          Nothing serious yet :c But may be there will be something cool in future :)
+        </v-card-text>
+      </v-card>
+      <v-card>
+        <v-card-title>
+          Contact information
+        </v-card-title>
+        <v-card-text>
+          You can contact me at:
+          <v-flex text-center>
+            <v-btn
+              v-for="contact in contacts"
+              :key="contact.name"
+              :href="contact.link"
+              target="_blank"
+              class="ml-1 mr-1 mt-1 mb-1"
+            >
+              <v-icon
+                class="mr-2"
+              >
+                {{ contact.icon }}
+              </v-icon>
+              {{ contact.name }} ({{ contact.rarity }})
+            </v-btn>
+          </v-flex>
+          If you need we can contact using other ways, i.e. Discord, Twitter, Facebook and etc. But first use any contact way above and say me about your desicion through it.
+          If you need more contact ways here, write about that in <v-btn @click="alert('No links provided yet')"> issues </v-btn>
         </v-card-text>
       </v-card>
     </v-col>
@@ -32,7 +76,35 @@ export default {
           'Java',
           'VueJS'
         ]
-      }
+      },
+      langs: [
+        'C++',
+        'C#',
+        'Java',
+        'Python',
+        'JavaScript',
+        'PHP'
+      ],
+      contacts: [
+        {
+          name: 'E-mail',
+          link: 'mailto:ryoidenshiaokigahara@gmail.com',
+          icon: 'mdi-email',
+          rarity: 'Often'
+        },
+        {
+          name: 'Telegram',
+          link: 'https://t.me/ryoidenshiaokigahara',
+          icon: 'mdi-telegram',
+          rarity: 'Often'
+        },
+        {
+          name: '4PDA.ru Forum',
+          link: 'http://4pda.ru/forum/index.php?showuser=4796618',
+          icon: 'mdi-forum',
+          rarity: 'Rare'
+        }
+      ]
     }
   },
   head () {

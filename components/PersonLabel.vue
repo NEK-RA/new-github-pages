@@ -21,6 +21,7 @@
         <v-chip
           v-for="tag in user.tags"
           :key="tag"
+          small
           class="ml-1 mr-1 mt-1 mb-1"
         >
           {{ tag.toUpperCase() }}
