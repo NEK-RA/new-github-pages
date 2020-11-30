@@ -38,7 +38,9 @@
           Nothing serious yet :c But may be there will be something cool in future :)
         </v-card-text>
       </v-card>
-      <v-card>
+      <v-card
+        class="mt-2"
+      >
         <v-card-title>
           Contact information
         </v-card-title>

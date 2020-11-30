@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto mb-2 mt-1">
+  <v-card class="mx-auto mb-2">
     <v-row>
       <v-col cols="12" sm="8" md="8">
         <v-list three-line>
