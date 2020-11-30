@@ -97,19 +97,14 @@ export default {
           icon: 'mdi-account-group',
           title: 'RJ-Leisure',
           to: '/rj-l',
-          disabled: true
+          disabled: false
         }
-      ]
+      ],
+      pageTitle: 'NEK-RA on Github'
     }
   },
-  computed: {
-    pageTitle () {
-      if (process.browser) {
-        return window.document.title
-      } else {
-        return 'NEK-RA on Github'
-      }
-    }
+  mounted () {
+    this.pageTitle = window.document.title
   }
 }
 </script>
