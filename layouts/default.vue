@@ -90,7 +90,7 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'Projects',
-          to: '/Projects',
+          to: '/projects',
           disabled: true
         },
         {

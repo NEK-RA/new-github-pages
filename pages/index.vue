@@ -17,12 +17,22 @@
               v-for="lang in langs"
               :key="lang"
             >
-              <v-chip small>
+              <v-chip
+                small
+                class="mb-1 mt-1"
+              >
                 {{ lang }}
               </v-chip>
             </li>
           </ul>
-          I'm a little bit everything, but more familiar with <v-chip>Java</v-chip> and <v-chip>JavaScript</v-chip>
+          I'm a little bit everything, but more familiar with
+          <v-chip small>
+            Java
+          </v-chip>
+          and
+          <v-chip small>
+            JavaScript
+          </v-chip>
           <br><br>
           <h2>Achivements</h2>
           Nothing serious yet :c But may be there will be something cool in future :)
@@ -40,7 +50,7 @@
               :key="contact.name"
               :href="contact.link"
               target="_blank"
-              class="ml-1 mr-1 mt-1 mb-1"
+              class="ml-1 mr-1 mt-1 mb-1 accent"
             >
               <v-icon
                 class="mr-2"
@@ -51,7 +61,16 @@
             </v-btn>
           </v-flex>
           If you need we can contact using other ways, i.e. Discord, Twitter, Facebook and etc. But first use any contact way above and say me about your desicion through it.
-          If you need more contact ways here, write about that in <v-btn @click="alert('No links provided yet')"> issues </v-btn>
+          If you need more contact ways here, write about that via e-mail or
+          <v-chip
+            href="https://github.com/nek-ra/"
+            target="_blank"
+          >
+            issues
+            <v-icon>
+              mdi-open-in-new
+            </v-icon>
+          </v-chip>
         </v-card-text>
       </v-card>
     </v-col>

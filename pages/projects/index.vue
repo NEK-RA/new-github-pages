@@ -8,6 +8,10 @@
 
 <script>
 export default {
-
+  head () {
+    return {
+      title: 'About me'
+    }
+  }
 }
 </script>
