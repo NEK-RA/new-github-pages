@@ -91,7 +91,7 @@ export default {
           icon: 'mdi-apps',
           title: 'Projects',
           to: '/projects',
-          disabled: true
+          disabled: false
         },
         {
           icon: 'mdi-account-group',
