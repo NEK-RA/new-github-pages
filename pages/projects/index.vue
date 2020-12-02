@@ -20,31 +20,27 @@
 
       <ProjectLabel
         v-for="project in projects"
-        :key="project"
+        :key="project.path"
         :project="project"
       />
-
     </v-col>
   </v-row>
 </template>
 
 <script>
-// import ProjectLabel from '@/components/ProjectLabel'
-
+import ProjectLabel from '@/components/ProjectLabel'
 export default {
   async asyncData ({ $content }) {
-    const projects = await $content('projects').only(['title', 'description', 'icon']).fetch()
-
+    const projects = await $content('projects').only(['title', 'description', 'icon', 'platform', 'lang', 'status']).fetch()
     return {
       projects
     }
   },
   components: {
-    // ProjectLabel
+    ProjectLabel
   },
-  head () {
+  data () {
     return {
-      title: 'My Projects',
       status: {
         active: 'ACTIVE',
         archived: 'ARCHIVED',
@@ -55,6 +51,11 @@ export default {
         eng: 'ENGLISH'
       },
       tags: []
+    }
+  },
+  head () {
+    return {
+      title: 'My Projects'
     }
   }
 }

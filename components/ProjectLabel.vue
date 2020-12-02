@@ -3,7 +3,7 @@
     <v-list three-line>
       <v-list-item>
         <v-list-item-avatar size="64">
-          <v-img :src="project.icon" />
+          <img :src="project.icon" />
         </v-list-item-avatar>
 
         <v-list-item-content>
