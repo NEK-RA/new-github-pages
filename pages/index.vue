@@ -89,7 +89,10 @@ export default {
     return {
       user: {
         name: 'NEK-RA',
-        avatar: 'https://i.comss.pics/2020/11/29/100x100-min.th.jpg',
+        avatar: {
+          url: 'https://i.comss.pics/2020/11/29/100x100-min.th.jpg',
+          type: 'other'
+        },
         shortly: 'Beginner developer, a little bit everything',
         tags: [
           'Russian',

@@ -57,7 +57,10 @@ export default {
     return {
       nekra: {
         name: 'NEK-RA',
-        avatar: 'https://i.comss.pics/2020/11/29/100x100-min.th.jpg',
+        avatar: {
+          url: 'https://i.comss.pics/2020/11/29/100x100-min.th.jpg',
+          type: 'other'
+        },
         shortly: 'Beginner developer, a little bit everything',
         tags: [
           'Russian',
@@ -68,7 +71,10 @@ export default {
       },
       jonsi: {
         name: 'Jonsi',
-        avatar: 'https://i.comss.pics/2020/11/30/gT5JES0JnA8.jpg',
+        avatar: {
+          url: 'https://i.comss.pics/2020/11/30/gT5JES0JnA8.jpg',
+          type: 'other'
+        },
         shortly: 'Aspiring artist',
         tags: [
           'Russian',

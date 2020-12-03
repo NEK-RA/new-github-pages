@@ -5,7 +5,11 @@
         <v-list three-line>
           <v-list-item>
             <v-list-item-avatar size="64">
-              <v-img :src="user.avatar" />
+              <v-img
+                :src="user.avatar.type === 'asset'
+                  ? require('@/assets'+user.avatar.url)
+                  : user.avatar.url"
+              />
             </v-list-item-avatar>
 
             <v-list-item-content>

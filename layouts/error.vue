@@ -59,7 +59,7 @@ export default {
       const errMessage = this.error.message
       const errDescription = this.error.statusCode === 404
         ? 'Error called "Page not found" usually rises when you make mistakes in URL, and as result it points to a page that doesn\'t exist. Check if you made any mistakes and if you sure that entered URL shouldn\'t give you "Page not found" report that via any contact way on main page. Otherwise just open menu and try to find what you need through site navigation :)'
-        : 'This is a placeholder for others unexpected errors. This site is fully static and hosted on Github Pages. Site has no any backend, so I\'m not sure which reason for these errors are possible'
+        : 'This is a placeholder for others unexpected errors. This site is fully static and hosted on Github Pages. Site has no any backend, so I\'m not sure which reason for these errors are possible. Title here contain next template: Error code - Error message. This data is provided by NuxtJS'
       return {
         title: errTitle,
         message: errMessage,
