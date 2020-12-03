@@ -5,16 +5,12 @@
         <v-card-title>
           My projects list
           <v-spacer />
-          <v-btn>Filter</v-btn>
+          <v-btn disabled>
+            Filter
+          </v-btn>
         </v-card-title>
         <v-card-text>
-          {{ projects }}
-          <!-- <v-chip
-            v-for="tag in tags"
-            :key="tag"
-          >
-            {{ tag }}
-          </v-chip> -->
+          <!-- {{ projects }} -->
         </v-card-text>
       </v-card>
 
@@ -30,14 +26,14 @@
 <script>
 import ProjectLabel from '@/components/ProjectLabel'
 export default {
+  components: {
+    ProjectLabel
+  },
   async asyncData ({ $content }) {
-    const projects = await $content('projects').only(['title', 'description', 'icon', 'platform', 'lang', 'status']).fetch()
+    const projects = await $content('projects').only(['title', 'description', 'icon', 'version', 'platform', 'lang', 'status']).fetch()
     return {
       projects
     }
-  },
-  components: {
-    ProjectLabel
   },
   data () {
     return {

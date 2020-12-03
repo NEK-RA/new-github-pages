@@ -11,24 +11,48 @@
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title v-text="project.title" />
+          <v-list-item-title>
+            {{ project.title }}
+            <v-chip
+              v-if="specified(project.version)"
+              small
+              label
+              class="ml-1"
+            >
+              {{ project.version }}
+            </v-chip>
+            <v-chip
+              v-if="specified(project.platform)"
+              small
+              label
+              class="ml-1"
+            >
+              {{ project.platform }}
+            </v-chip>
+            <v-chip
+              v-if="specified(project.status)"
+              small
+              label
+              class="ml-1"
+            >
+              {{ project.status }}
+            </v-chip>
+            <v-chip
+              v-if="specified(project.lang)"
+              small
+              label
+              class="ml-1"
+            >
+              {{ project.lang }}
+            </v-chip>
+          </v-list-item-title>
           <v-list-item-subtitle>
             {{ project.description }}
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <!-- <v-card-actions>
-      <v-chip
-        v-for="tag in user.tags"
-        :key="tag"
-        x-small
-        class="ml-1 mr-1"
-      >
-        {{ tag.toUpperCase() }}
-      </v-chip>
-    </v-card-actions> -->
-    {{ project }}
+    <!-- {{ project }} -->
   </v-card>
 </template>
 
@@ -39,6 +63,15 @@ export default {
       type: Object,
       required: true,
       default: () => ({})
+    }
+  },
+  methods: {
+    specified (smth) {
+      let result = false
+      if (smth !== '' && smth !== null && smth !== undefined) {
+        result = true
+      }
+      return result
     }
   }
 }
