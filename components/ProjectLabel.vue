@@ -51,21 +51,6 @@
           {{ project.status }}
         </v-chip>
         <v-chip
-          v-if="specified(project.platform)"
-          small
-          label
-          class="ml-1 mt-1 mb-1 mr-1"
-          :color="platformColor"
-        >
-          <v-icon
-            small
-            class="mr-2"
-          >
-            {{ platformIcon }}
-          </v-icon>
-          {{ project.platform }}
-        </v-chip>
-        <v-chip
           v-if="specified(project.lang)"
           small
           label
@@ -79,6 +64,21 @@
             mdi-flag
           </v-icon>
           {{ project.lang }}
+        </v-chip>
+        <v-chip
+          v-if="specified(project.platform)"
+          small
+          label
+          class="ml-1 mt-1 mb-1 mr-1"
+          :color="platformColor"
+        >
+          <v-icon
+            small
+            class="mr-2"
+          >
+            {{ platformIcon }}
+          </v-icon>
+          {{ project.platform }}
         </v-chip>
       </v-col>
     </v-row>
