@@ -39,7 +39,7 @@
           v-if="specified(project.status)"
           small
           label
-          class="ml-1"
+          class="ml-1 mt-1 mb-1 mr-1"
           :color="statusColor"
         >
           <v-icon
@@ -53,7 +53,7 @@
           v-if="specified(project.platform)"
           small
           label
-          class="ml-1"
+          class="ml-1 mt-1 mb-1 mr-1"
           :color="platformColor"
         >
           <v-icon
@@ -67,7 +67,7 @@
           v-if="specified(project.lang)"
           small
           label
-          class="ml-1"
+          class="ml-1 mt-1 mb-1 mr-1"
           :color="langColor"
         >
           <v-icon
