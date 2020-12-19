@@ -21,12 +21,17 @@
           </v-list-item>
         </v-list>
       </v-col>
-      <v-col cols="12" sm="4" md="4">
+      <v-col
+        cols="12"
+        sm="4"
+        md="4"
+        align-self="center"
+      >
         <v-chip
           v-for="tag in user.tags"
           :key="tag"
           small
-          class="ml-1 mr-1 mt-1 mb-1"
+          class="ml-2 mr-2 mt-2 mb-2"
         >
           {{ tag.toUpperCase() }}
         </v-chip>

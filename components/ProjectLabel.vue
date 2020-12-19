@@ -1,57 +1,84 @@
 <template>
   <v-card class="mx-auto mb-1 mt-1">
-    <v-list three-line>
-      <v-list-item>
-        <v-list-item-avatar size="64">
-          <v-img
-            :src="project.icon.type === 'asset'
-              ? require('@/assets'+project.icon.url)
-              : project.icon.url"
-          />
-        </v-list-item-avatar>
+    <v-row>
+      <v-col cols="12" sm="8" md="8">
+        <v-list three-line>
+          <v-list-item>
+            <v-list-item-avatar size="64">
+              <v-img
+                :src="project.icon.type === 'asset'
+                  ? require('@/assets'+project.icon.url)
+                  : project.icon.url"
+              />
+            </v-list-item-avatar>
 
-        <v-list-item-content>
-          <v-list-item-title>
-            {{ project.title }}
-            <v-chip
-              v-if="specified(project.version)"
-              small
-              label
-              class="ml-1"
-            >
-              {{ project.version }}
-            </v-chip>
-            <v-chip
-              v-if="specified(project.platform)"
-              small
-              label
-              class="ml-1"
-            >
-              {{ project.platform }}
-            </v-chip>
-            <v-chip
-              v-if="specified(project.status)"
-              small
-              label
-              class="ml-1"
-            >
-              {{ project.status }}
-            </v-chip>
-            <v-chip
-              v-if="specified(project.lang)"
-              small
-              label
-              class="ml-1"
-            >
-              {{ project.lang }}
-            </v-chip>
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            {{ project.description }}
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
+            <v-list-item-content>
+              <v-list-item-title>
+                {{ project.title }}
+                <span
+                  v-if="specified(project.version)"
+                  class="ml-1"
+                >
+                  v{{ project.version }}
+                </span>
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{ project.description }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-col>
+      <v-col
+        cols="12"
+        sm="4"
+        md="4"
+        align-self="center"
+      >
+        <v-chip
+          v-if="specified(project.platform)"
+          small
+          label
+          class="ml-1"
+          :color="platformColor"
+        >
+          <v-icon
+            class="mr-2"
+          >
+            {{ platformIcon }}
+          </v-icon>
+          {{ project.platform }}
+        </v-chip>
+        <v-chip
+          v-if="specified(project.status)"
+          small
+          label
+          class="ml-1"
+          :color="statusColor"
+        >
+          <v-icon
+            class="mr-2"
+          >
+            {{ statusIcon }}
+          </v-icon>
+          {{ project.status }}
+        </v-chip>
+        <v-chip
+          v-if="specified(project.lang)"
+          small
+          label
+          class="ml-1"
+          :color="langColor"
+        >
+          <v-icon
+            class="mr-2"
+          >
+            mdi-flag
+          </v-icon>
+          {{ project.lang }}
+        </v-chip>
+      </v-col>
+    </v-row>
     <!-- {{ project }} -->
   </v-card>
 </template>
@@ -63,6 +90,84 @@ export default {
       type: Object,
       required: true,
       default: () => ({})
+    }
+  },
+  computed: {
+    platformIcon () {
+      let icon = ''
+      switch (this.project.platform) {
+        case 'ANDROID':
+          icon = 'mdi-tablet-cellphone'
+          break
+        case 'WEB':
+          icon = 'mdi-web'
+          break
+        case 'WINDOWS':
+          icon = 'mdi-laptop'
+          break
+        case 'LINUX':
+          icon = 'mdi-linux'
+      }
+      return icon
+    },
+    statusIcon () {
+      let icon = ''
+      switch (this.project.status) {
+        case 'ARCHIVED':
+          icon = 'mdi-archive'
+          break
+        case 'ACTIVE':
+          icon = 'mdi-check'
+          break
+        case 'FROZEN':
+          icon = 'mdi-snowflake'
+          break
+        case 'SUPPORT':
+          icon = 'mdi-help-box'
+      }
+      return icon
+    },
+    statusColor () {
+      let color = ''
+      switch (this.project.status) {
+        case 'SUPPORT':
+          color = 'orange darken-2'
+          break
+        case 'ACTIVE':
+          color = 'green darken-4'
+          break
+        case 'IN DEVELOPMENT':
+          color = 'blue darken-4'
+          break
+        default:
+          color = ''
+          break
+      }
+      return color
+    },
+    langColor () {
+      let color = ''
+      switch (this.project.lang) {
+        case 'MULTILANGUAGE':
+          color = 'green darken-4'
+          break
+        default:
+          color = 'blue darken-4'
+          break
+      }
+      return color
+    },
+    platformColor () {
+      let color = ''
+      switch (this.project.platform) {
+        case 'CROSSPLATFORM':
+          color = 'green darken-4'
+          break
+        default:
+          color = 'blue darken-4'
+          break
+      }
+      return color
     }
   },
   methods: {
