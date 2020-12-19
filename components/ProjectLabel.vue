@@ -36,20 +36,6 @@
         align-self="center"
       >
         <v-chip
-          v-if="specified(project.platform)"
-          small
-          label
-          class="ml-1"
-          :color="platformColor"
-        >
-          <v-icon
-            class="mr-2"
-          >
-            {{ platformIcon }}
-          </v-icon>
-          {{ project.platform }}
-        </v-chip>
-        <v-chip
           v-if="specified(project.status)"
           small
           label
@@ -62,6 +48,20 @@
             {{ statusIcon }}
           </v-icon>
           {{ project.status }}
+        </v-chip>
+        <v-chip
+          v-if="specified(project.platform)"
+          small
+          label
+          class="ml-1"
+          :color="platformColor"
+        >
+          <v-icon
+            class="mr-2"
+          >
+            {{ platformIcon }}
+          </v-icon>
+          {{ project.platform }}
         </v-chip>
         <v-chip
           v-if="specified(project.lang)"
@@ -123,7 +123,7 @@ export default {
           icon = 'mdi-snowflake'
           break
         case 'SUPPORT':
-          icon = 'mdi-help-box'
+          icon = 'mdi-bug'
       }
       return icon
     },
