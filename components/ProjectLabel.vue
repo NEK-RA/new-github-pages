@@ -43,6 +43,7 @@
           :color="statusColor"
         >
           <v-icon
+            small
             class="mr-2"
           >
             {{ statusIcon }}
@@ -57,6 +58,7 @@
           :color="platformColor"
         >
           <v-icon
+            small
             class="mr-2"
           >
             {{ platformIcon }}
@@ -71,6 +73,7 @@
           :color="langColor"
         >
           <v-icon
+            small
             class="mr-2"
           >
             mdi-flag
@@ -124,23 +127,30 @@ export default {
           break
         case 'SUPPORT':
           icon = 'mdi-bug'
+          break
+        case 'DEVELOPMENT':
+          icon = 'mdi-trello'
+          break
       }
       return icon
     },
     statusColor () {
       let color = ''
       switch (this.project.status) {
-        case 'SUPPORT':
-          color = 'orange darken-2'
+        case 'ARCHIVED':
+          color = 'brown'
           break
         case 'ACTIVE':
           color = 'green darken-4'
           break
-        case 'IN DEVELOPMENT':
-          color = 'blue darken-4'
+        case 'FROZEN':
+          color = 'blue lighten-3'
           break
-        default:
-          color = ''
+        case 'SUPPORT':
+          color = 'orange darken-2'
+          break
+        case 'DEVELOPMENT':
+          color = 'blue-grey'
           break
       }
       return color
