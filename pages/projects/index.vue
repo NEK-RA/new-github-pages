@@ -55,7 +55,7 @@ export default {
     ProjectLabel
   },
   async asyncData ({ $content }) {
-    const projects = await $content('projects').only(['title', 'description', 'icon', 'version', 'platform', 'lang', 'status']).fetch()
+    const projects = await $content('projects').only(['title', 'description', 'icon', 'version', 'platform', 'lang', 'status', 'slug']).fetch()
     return {
       projects
     }
@@ -94,3 +94,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  a {
+    text-decoration: none;
+  }
+</style>
