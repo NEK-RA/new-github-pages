@@ -87,6 +87,7 @@ export default {
   },
   data () {
     return {
+      pageTitle: 'About me',
       user: {
         name: 'NEK-RA',
         avatar: {
