@@ -63,6 +63,7 @@
       app
     >
       <v-flex text-center>
+        {{ pageStateTitle }}
         <div>NEK-RA (prev. Ryoidenshi Aokigahara) <br> &copy; 2017 — {{ new Date().getFullYear() }}</div>
       </v-flex>
     </v-footer>
@@ -70,7 +71,7 @@
 </template>
 
 <script>
-
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -103,6 +104,12 @@ export default {
       ],
       pageTitle: 'NEK-RA on Github'
     }
+  },
+  computed: {
+    ...mapGetters({
+      darkTheme: 'layout/getDark',
+      pageStateTitle: 'layout/getTitle'
+    })
   },
   mounted () {
     this.pageTitle = window.document.title
