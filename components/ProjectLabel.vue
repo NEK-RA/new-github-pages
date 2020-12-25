@@ -1,6 +1,6 @@
 <template>
-  <NuxtLink
-    :to="project.path"
+  <nuxt-link
+    :to="'projects/'+project.slug"
   >
     <v-card class="mx-auto mb-1 mt-1">
       <v-row>
@@ -85,9 +85,8 @@
           </v-chip>
         </v-col>
       </v-row>
-      <!-- {{ project }} -->
     </v-card>
-  </NuxtLink>
+  </nuxt-link>
 </template>
 
 <script>
@@ -195,3 +194,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  a {
+    text-decoration: none;
+  }
+</style>
