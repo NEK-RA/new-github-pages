@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="8">
+    <v-col cols="12" sm="8" md="10">
       <v-card>
         <v-expansion-panels>
           <v-expansion-panel>
@@ -39,11 +39,15 @@
         </v-expansion-panels>
       </v-card>
 
-      <ProjectLabel
+      <nuxt-link
         v-for="project in filteredProjects"
         :key="project.path"
-        :project="project"
-      />
+        :to="'projects/'+project.slug"
+      >
+        <ProjectLabel
+          :project="project"
+        />
+      </nuxt-link>
     </v-col>
   </v-row>
 </template>
@@ -94,3 +98,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  a {
+    text-decoration: none;
+  }
+</style>
