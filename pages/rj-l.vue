@@ -55,6 +55,7 @@ export default {
   },
   data () {
     return {
+      pageTitle: 'RJ-Leisure Team',
       nekra: {
         name: 'NEK-RA',
         avatar: {
@@ -83,9 +84,12 @@ export default {
       }
     }
   },
+  mounted () {
+    this.$store.dispatch('layout/updateTitle', this.pageTitle)
+  },
   head () {
     return {
-      title: 'RJ-Leisure Team'
+      title: this.pageTitle
     }
   }
 }

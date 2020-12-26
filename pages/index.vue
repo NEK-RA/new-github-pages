@@ -132,9 +132,12 @@ export default {
       ]
     }
   },
+  mounted () {
+    this.$store.dispatch('layout/updateTitle', this.pageTitle)
+  },
   head () {
     return {
-      title: 'About me'
+      title: this.pageTitle
     }
   }
 }

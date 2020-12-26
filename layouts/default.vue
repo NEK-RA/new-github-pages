@@ -43,6 +43,12 @@
           </li>
         </ul>
       </div>
+      <v-btn
+        block
+        @click="toggleTheme"
+      >
+        Change Theme
+      </v-btn>
     </v-navigation-drawer>
     <v-app-bar
       clipped-left
@@ -51,7 +57,9 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-spacer />
-      <v-toolbar-title v-text="pageTitle" />
+      <v-toolbar-title>
+        {{ pageTitle }} | NEK-RA
+      </v-toolbar-title>
       <v-spacer />
     </v-app-bar>
     <v-main>
@@ -63,7 +71,6 @@
       app
     >
       <v-flex text-center>
-        {{ pageStateTitle }}
         <div>NEK-RA (prev. Ryoidenshi Aokigahara) <br> &copy; 2017 — {{ new Date().getFullYear() }}</div>
       </v-flex>
     </v-footer>
@@ -87,7 +94,7 @@ export default {
           icon: 'mdi-newspaper-variant',
           title: 'Blog / News',
           to: '/blog',
-          disabled: true
+          disabled: false
         },
         {
           icon: 'mdi-apps',
@@ -101,18 +108,18 @@ export default {
           to: '/rj-l',
           disabled: false
         }
-      ],
-      pageTitle: 'NEK-RA on Github'
+      ]
     }
   },
   computed: {
     ...mapGetters({
-      darkTheme: 'layout/getDark',
-      pageStateTitle: 'layout/getTitle'
+      pageTitle: 'layout/getTitle'
     })
   },
-  mounted () {
-    this.pageTitle = window.document.title
+  methods: {
+    toggleTheme () {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+    }
   }
 }
 </script>

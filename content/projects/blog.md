@@ -7,4 +7,4 @@ lang: ENGLISH
 platform: WEB
 ---
 ### Description:
-Ну тут это короче типа чето про блог
+Here is blog description :D

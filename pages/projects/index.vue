@@ -66,6 +66,7 @@ export default {
   },
   data () {
     return {
+      pageTitle: 'My projects',
       filter: {
         platform: 'All',
         status: 'All',
@@ -90,6 +91,9 @@ export default {
       }
       return result
     }
+  },
+  mounted () {
+    this.$store.dispatch('layout/updateTitle', this.pageTitle)
   },
   head () {
     return {

@@ -86,10 +86,10 @@
 </template>
 
 <script>
-// import ProjectLabel from '@/components/ProjectLabel'
+import ProjectLabel from '@/components/ProjectLabel'
 export default {
   components: {
-    // ProjectLabel
+    ProjectLabel
   },
   async asyncData ({ params, $content }) {
     const page = await $content(`projects/${params.slug}`).fetch()
@@ -112,6 +112,9 @@ export default {
       }
     }
   },
+  mounted () {
+    this.$store.dispatch('layout/updateTitle', this.project.title)
+  },
   methods: {
     dlIcon (label) {
       let icon = 'mdi-cloud-download'
@@ -129,6 +132,11 @@ export default {
         rst = true
       }
       return rst
+    }
+  },
+  head () {
+    return {
+      title: this.project.title
     }
   }
 }
