@@ -97,7 +97,14 @@ export default {
   },
   head () {
     return {
-      title: 'My Projects'
+      title: 'My Projects',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Projects of NEK-RA. Here you can see status, locale and platform of projects'
+        }
+      ]
     }
   }
 }

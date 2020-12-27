@@ -136,7 +136,14 @@ export default {
   },
   head () {
     return {
-      title: this.project.title
+      title: this.project.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.project.description
+        }
+      ]
     }
   }
 }

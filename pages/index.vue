@@ -137,7 +137,14 @@ export default {
   },
   head () {
     return {
-      title: this.pageTitle
+      title: this.pageTitle,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Welcome. Here is some info about me'
+        }
+      ]
     }
   }
 }

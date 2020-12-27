@@ -23,7 +23,7 @@
 <script>
 export default {
   async asyncData ({ $content }) {
-    const posts = await $content('blog').only(['title', 'description', 'slug']).fetch()
+    const posts = await $content('blog').only(['title', 'description', 'slug', 'createdAt']).fetch()
     return {
       posts
     }
@@ -38,7 +38,14 @@ export default {
   },
   head () {
     return {
-      title: this.pageTitle
+      title: this.pageTitle,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Small blog of NEK-RA. Also here will be news about projects'
+        }
+      ]
     }
   }
 }
