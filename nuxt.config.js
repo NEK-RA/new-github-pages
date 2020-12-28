@@ -75,6 +75,6 @@ export default {
     host: '0.0.0.0' // default: localhost
   },
   generate: {
-    routes: ['/projects/blog', '/projects/q32']
+    routes: ['/projects/blog', '/projects/q32', '/blog/test-second', '/blog/first-post']
   }
 }
