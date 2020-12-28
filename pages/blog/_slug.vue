@@ -11,7 +11,7 @@
           <span
             v-if="post.updated"
           >
-            Updated: {{ new Date(post.updated).toLocaleString() }}
+            Updated: {{ new Date(post.updated).toLocaleString() }} <br>
           </span>
           Tags:
           <v-chip
