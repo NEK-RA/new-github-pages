@@ -43,12 +43,6 @@
           </li>
         </ul>
       </div>
-      <v-btn
-        block
-        @click="toggleTheme"
-      >
-        Change Theme
-      </v-btn>
     </v-navigation-drawer>
     <v-app-bar
       clipped-left
@@ -115,11 +109,6 @@ export default {
     ...mapGetters({
       pageTitle: 'layout/getTitle'
     })
-  },
-  methods: {
-    toggleTheme () {
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
-    }
   }
 }
 </script>

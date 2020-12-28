@@ -75,7 +75,7 @@
           If you need we can contact using other ways, i.e. Discord, Twitter, Facebook and etc. But first use any contact way above and say me about your desicion through it.
           If you need more contact ways here, write about that via e-mail or
           <v-chip
-            href="https://github.com/nek-ra/"
+            href="https://github.com/NEK-RA/new-github-pages/issues"
             target="_blank"
           >
             issues
