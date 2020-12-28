@@ -30,7 +30,7 @@ export default {
     PostLabel
   },
   async asyncData ({ $content }) {
-    const posts = await $content('blog').only(['title', 'description', 'slug', 'posted', 'tags']).fetch()
+    const posts = await $content('blog').only(['title', 'description', 'slug', 'posted', 'tags']).sortBy('posted', 'desc').fetch()
     return {
       posts
     }
