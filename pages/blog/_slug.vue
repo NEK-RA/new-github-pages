@@ -62,19 +62,6 @@ export default {
       post
     }
   },
-  computed: {
-    postLabel () {
-      return {
-        title: this.post.title,
-        description: this.post.description,
-        tags: this.post.tags,
-        time: {
-          created: this.post.createdAt,
-          updated: this.post.updatedAt
-        }
-      }
-    }
-  },
   mounted () {
     this.$store.dispatch('layout/updateTitle', this.post.title)
   },

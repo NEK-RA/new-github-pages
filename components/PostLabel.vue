@@ -1,10 +1,20 @@
 <template>
   <v-card>
-    <v-row>
-      <v-col cols="12" sm="8" md="8">
-        {{ post }}
-      </v-col>
-    </v-row>
+    <v-card-title>
+      {{ post.title }}
+    </v-card-title>
+    <v-card-text>
+      {{ new Date(post.posted).toLocaleString() }}
+      <v-chip
+        v-for="(tag,index) in post.tags"
+        :key="index"
+        small
+        class="ml-1 mr-1"
+      >
+        {{ tag }}
+      </v-chip><br>
+      {{ post.description }}
+    </v-card-text>
   </v-card>
 </template>
 

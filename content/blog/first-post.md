@@ -1,8 +1,8 @@
 ---
-title: First post
-description: My first post on new site
+title: Personal page on Github Pages updated!
+description: Some intro and details about update. Also description what here will be at all
 author: NEK-RA
-type: News
+posted: 2020-12-26T18:39:44Z
 tags: 
   - News
   - Update

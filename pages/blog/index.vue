@@ -11,8 +11,9 @@
             :key="post.slug"
             :to="'blog/'+post.slug"
           >
-            {{ post.title }} <br>
-            {{ post.description }}
+            <PostLabel
+              :post="post"
+            />
           </nuxt-link>
         </v-card-text>
       </v-card>
@@ -21,9 +22,13 @@
 </template>
 
 <script>
+import PostLabel from '@/components/PostLabel'
 export default {
+  components: {
+    PostLabel
+  },
   async asyncData ({ $content }) {
-    const posts = await $content('blog').only(['title', 'description', 'slug', 'createdAt']).fetch()
+    const posts = await $content('blog').only(['title', 'description', 'slug', 'posted', 'tags']).fetch()
     return {
       posts
     }
@@ -50,3 +55,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  a {
+    text-decoration: none;
+  }
+</style>
