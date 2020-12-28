@@ -1,20 +1,13 @@
-# nuxt-npx-template
+# What is it
 
-## Build Setup
+Building new personal site for Github Pages service.
+Probably it will work with Github Actions to automaticaly build and deploy.
+After finishing "first version" working with Github Actions this repo will arrive to nek-ra.github.io
 
-```bash
-# install dependencies
-$ npm install
+# What used
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+Here used [Nuxt.JS](https://nuxtjs.org/) with it's module [@nuxt/content](https://content.nuxtjs.org/)
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+# Preview
 
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Preview is available at https://nek-ra.vercel.app
