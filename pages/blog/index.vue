@@ -1,22 +1,24 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="8">
+    <v-col cols="12" sm="8" md="10">
       <v-card>
         <v-card-title>
-          Here will be blog
+          Search should be here (if it will be at all)
         </v-card-title>
         <v-card-text>
-          <nuxt-link
-            v-for="post in posts"
-            :key="post.slug"
-            :to="'blog/'+post.slug"
-          >
-            <PostLabel
-              :post="post"
-            />
-          </nuxt-link>
+          Filters will be here
         </v-card-text>
       </v-card>
+
+      <nuxt-link
+        v-for="post in posts"
+        :key="post.slug"
+        :to="'blog/'+post.slug"
+      >
+        <PostLabel
+          :post="post"
+        />
+      </nuxt-link>
     </v-col>
   </v-row>
 </template>

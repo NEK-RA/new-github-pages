@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="mx-auto mb-1 mt-1">
     <v-card-title>
       {{ post.title }}
     </v-card-title>
