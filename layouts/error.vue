@@ -14,30 +14,47 @@
           <v-card-text>
             {{ errorInfo.description }}
           </v-card-text>
-          <v-card-actions>
-            <v-btn
-              to="/"
-              class="accent"
+          <v-row
+            justify="center"
+            class="mr-2"
+          >
+            <v-col
+              cols="12"
+              :sm="4"
+              :md="4"
             >
-              <v-icon
-                class="mr-2"
+              <v-btn
+                block
+                class="ml-2 mr-2 mt-1 mb-1 accent"
+                to="/"
               >
-                mdi-home
-              </v-icon>
-              Home page
-            </v-btn>
-            <v-btn
-              class="accent"
-              @click="reportError"
+                <v-icon
+                  class="mr-2"
+                >
+                  mdi-home
+                </v-icon>
+                Home page
+              </v-btn>
+            </v-col>
+            <v-col
+              cols="12"
+              :sm="8"
+              :md="8"
             >
-              <v-icon
-                class="mr-2"
+              <v-btn
+                block
+                class="ml-2 mr-2 mt-1 mb-1 accent"
+                @click="reportError"
               >
-                mdi-alert
-              </v-icon>
-              Report error via E-mail
-            </v-btn>
-          </v-card-actions>
+                <v-icon
+                  class="mr-2"
+                >
+                  mdi-alert
+                </v-icon>
+                Report error via E-mail
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-card>
       </v-col>
     </v-row>

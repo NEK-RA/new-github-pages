@@ -16,31 +16,48 @@
           We decided to call us "RJ-Leisure Team" when we will do any content together :)
           <br>
           I'm not sure if we will do any content in English, but you can visit now Jonsi's profiles at VK and Instagram.
-          <v-flex text-center>
-            <v-btn
-              class="accent mr-2"
-              href="https://www.instagram.com/ing.jonsi/"
+          <v-row
+            justify="center"
+            class="mr-2"
+          >
+            <v-col
+              cols="12"
+              :sm="4"
+              :md="4"
             >
-              <v-icon
-                class="mr-2"
+              <v-btn
+                block
+                class="accent mr-2"
+                href="https://www.instagram.com/ing.jonsi/"
               >
-                mdi-instagram
-              </v-icon>
-              Instagram
-            </v-btn>
-            <v-btn
-              class="accent"
-              href="https://vk.com/jonsi_art/"
-              target="_blank"
+                <v-icon
+                  class="mr-2"
+                >
+                  mdi-instagram
+                </v-icon>
+                Instagram
+              </v-btn>
+            </v-col>
+            <v-col
+              cols="12"
+              :sm="4"
+              :md="4"
             >
-              <v-icon
-                class="mr-2"
+              <v-btn
+                block
+                class="accent"
+                href="https://vk.com/jonsi_art/"
+                target="_blank"
               >
-                mdi-vk
-              </v-icon>
-              VKontakte
-            </v-btn>
-          </v-flex>
+                <v-icon
+                  class="mr-2"
+                >
+                  mdi-vk
+                </v-icon>
+                VKontakte
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-card-text>
       </v-card>
     </v-col>

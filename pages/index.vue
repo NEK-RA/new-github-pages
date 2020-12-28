@@ -46,22 +46,32 @@
         </v-card-title>
         <v-card-text>
           You can contact me at:
-          <v-flex text-center>
-            <v-btn
+          <v-row
+            justify="center"
+            class="mr-2"
+          >
+            <v-col
               v-for="contact in contacts"
               :key="contact.name"
-              :href="contact.link"
-              target="_blank"
-              class="ml-1 mr-1 mt-1 mb-1 accent"
+              cols="12"
+              :sm="12 / contacts.length"
+              :md="12 / contacts.length"
             >
-              <v-icon
-                class="mr-2"
+              <v-btn
+                block
+                class="ml-1 mr-1 mt-1 mb-1 accent"
+                target="_blank"
+                :href="contact.link"
               >
-                {{ contact.icon }}
-              </v-icon>
-              {{ contact.name }} ({{ contact.rarity }})
-            </v-btn>
-          </v-flex>
+                <v-icon
+                  class="mr-2"
+                >
+                  {{ contact.icon }}
+                </v-icon>
+                {{ contact.name }} ({{ contact.rarity }})
+              </v-btn>
+            </v-col>
+          </v-row>
           If you need we can contact using other ways, i.e. Discord, Twitter, Facebook and etc. But first use any contact way above and say me about your desicion through it.
           If you need more contact ways here, write about that via e-mail or
           <v-chip
