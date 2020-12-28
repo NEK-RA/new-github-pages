@@ -36,21 +36,6 @@
         </v-card-title>
         <v-card-text>
           <div id="disqus_thread" />
-          <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            var disqus_config = function () {
-            this.page.url = 'https://nek-ra.vercel.app/blog/'+post.slug;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = 'https://nek-ra.vercel.app/blog/'+post.slug; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://nek-ra.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          </script>
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </v-card-text>
       </v-card>
@@ -70,6 +55,21 @@ export default {
   },
   mounted () {
     this.$store.dispatch('layout/updateTitle', this.post.title)
+    // Trying to move disqus loading to mounted hook
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    // eslint-disable-next-line no-unused-vars, camelcase
+    const disqus_config = function () {
+      this.page.url = 'https://nek-ra.vercel.app/blog/' + this.post.slug // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = this.post.slug // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function () { // DON'T EDIT BELOW THIS LINE
+      const d = document; const s = d.createElement('script')
+      s.src = 'https://nek-ra.disqus.com/embed.js'
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s)
+    })()
   },
   head () {
     return {
