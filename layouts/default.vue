@@ -108,6 +108,18 @@ export default {
           title: 'RJ-Leisure',
           to: '/rj-l',
           disabled: false
+        },
+        {
+          icon: 'mdi-thumb-up',
+          title: 'Support me',
+          to: '/support',
+          disabled: true
+        },
+        {
+          icon: 'mdi-security-network',
+          title: 'Privacy Policy',
+          to: '/privacy',
+          disabled: false
         }
       ]
     }
