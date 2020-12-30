@@ -113,7 +113,7 @@ export default {
           icon: 'mdi-thumb-up',
           title: 'Support me',
           to: '/support',
-          disabled: true
+          disabled: false
         },
         {
           icon: 'mdi-security-network',
