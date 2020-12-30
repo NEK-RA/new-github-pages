@@ -5,7 +5,7 @@ author: NEK-RA
 posted: 1609165648000
 updated: 1609171531000
 tags: 
-  - News
+  - Project update
 ---
 ## Disqus comments
 

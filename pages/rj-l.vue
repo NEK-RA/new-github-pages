@@ -15,7 +15,7 @@
         <v-card-text>
           We decided to call us "RJ-Leisure Team" when we will do any content together :)
           <br>
-          I'm not sure if we will do any content in English, but you can visit now Jonsi's profiles at VK and Instagram.
+          I'm not sure if we will do any content in English, but you can visit now Jonsi's profiles at VK and Instagram and see her arts :D
           <v-row
             justify="center"
             class="mr-2"
