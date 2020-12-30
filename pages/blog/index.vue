@@ -2,54 +2,65 @@
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="10">
       <v-card>
-        <v-card-title>
-          Search and tag filter
-        </v-card-title>
-        <v-card-text>
-          Filters will be here
-          <hr>
-          <v-expansion-panels>
-            <v-expansion-panel>
-              <v-expansion-panel-header>
-                Filter by tags
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <v-alert
-                  type="info"
-                  color="grey darken-3"
-                >
-                  You will see posts which contain all selected tags
-                </v-alert>
-                Selected tags:
+        <v-expansion-panels>
+          <v-expansion-panel>
+            <v-expansion-panel-header>
+              Search and tag filter
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <v-alert
+                type="info"
+                color="grey darken-3"
+                dense
+                dismissible
+              >
+                Search is working only with <u>post title and description</u>
+              </v-alert>
+              <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search posts"
+                single-line
+                outlined
+                placeholder="Search for ..."
+              />
+              <v-alert
+                type="info"
+                color="grey darken-3"
+                dense
+                dismissible
+              >
+                You will see posts which contain <u>all selected tags</u>
+              </v-alert>
+              Selected tags:
+              <v-chip
+                v-for="(tag,index) in selected"
+                :key="'selected'+index"
+                small
+                class="ml-1 mt-1 mr-1 mb-1"
+                close
+                @click:close="selected.splice(index, 1)"
+              >
+                {{ tag }}
+              </v-chip>
+              <br>
+              All tags:
+              <template
+                v-for="(tag,index) in tags"
+              >
                 <v-chip
-                  v-for="(tag,index) in selected"
-                  :key="'selected'+index"
+                  v-if="!selected.includes(tag)"
+                  :key="'all'+index"
                   small
                   class="ml-1 mt-1 mr-1 mb-1"
-                  close
-                  @click:close="selected.splice(index, 1)"
+                  @click="selected.push(tag)"
                 >
                   {{ tag }}
                 </v-chip>
-                <br>
-                All tags:
-                <template
-                  v-for="(tag,index) in tags"
-                >
-                  <v-chip
-                    v-if="!selected.includes(tag)"
-                    :key="'all'+index"
-                    small
-                    class="ml-1 mt-1 mr-1 mb-1"
-                    @click="selected.push(tag)"
-                  >
-                    {{ tag }}
-                  </v-chip>
-                </template>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
-        </v-card-text>
+              </template>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
       </v-card>
 
       <v-alert
@@ -100,7 +111,8 @@ export default {
   data () {
     return {
       pageTitle: 'Blog',
-      selected: []
+      selected: [],
+      search: ''
     }
   },
   computed: {
@@ -108,6 +120,13 @@ export default {
       let result = this.posts
       if (this.selected.length !== 0) {
         result = result.filter(post => (this.includeAll(post.tags, this.selected)))
+      }
+      const search = this.search.trim().toLowerCase()
+      if (this.search.trim().length !== 0) {
+        result = result.filter(post =>
+          post.title.toLowerCase().includes(search) ||
+          post.description.toLowerCase().includes(search)
+        )
       }
       return result
     }
