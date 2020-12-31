@@ -84,6 +84,10 @@ export default {
       }
     }
   },
+  mounted () {
+    const errorTitle = 'Error ' + this.error.statusCode
+    this.$store.dispatch('layout/updateTitle', errorTitle)
+  },
   methods: {
     reportError () {
       const report = {
@@ -96,9 +100,15 @@ export default {
     }
   },
   head () {
-    const title = this.errorInfo.title + ' ' + this.errorInfo.message
     return {
-      title
+      title: 'Error ' + this.error.statusCode,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Error ' + this.error.statusCode + ': ' + this.error.message
+        }
+      ]
     }
   }
 }

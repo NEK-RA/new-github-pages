@@ -117,7 +117,7 @@ export default {
         },
         {
           icon: 'mdi-security-network',
-          title: 'Privacy Policy',
+          title: 'Privacy info',
           to: '/privacy',
           disabled: false
         }

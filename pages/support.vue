@@ -56,7 +56,7 @@
 export default {
   data () {
     return {
-      drawer: false,
+      pageTitle: 'Support me',
       links: [
         {
           icon: 'mdi-help-box',
@@ -75,6 +75,21 @@ export default {
           title: 'Visit my Stack Overflow.',
           subtitle: 'May be you have answers for some questions',
           href: 'https://stackoverflow.com/users/11928561/ryoidenshi-aokigahara?tab=questions'
+        }
+      ]
+    }
+  },
+  mounted () {
+    this.$store.dispatch('layout/updateTitle', this.pageTitle)
+  },
+  head () {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'The ways to support me'
         }
       ]
     }

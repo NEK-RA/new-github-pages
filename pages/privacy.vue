@@ -3,7 +3,7 @@
     <v-col cols="12" sm="8" md="10">
       <v-card>
         <v-card-title>
-          Privacy Policy
+          Privacy Information
         </v-card-title>
         <v-card-text>
           This is a static site generated with NuxtJS. I don't use cookies at all, but please notice:
@@ -47,6 +47,25 @@
 
 <script>
 export default {
-
+  data () {
+    return {
+      pageTitle: 'Privacy information'
+    }
+  },
+  mounted () {
+    this.$store.dispatch('layout/updateTitle', this.pageTitle)
+  },
+  head () {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Information about any external services used, which use cookies'
+        }
+      ]
+    }
+  }
 }
 </script>
