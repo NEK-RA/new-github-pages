@@ -76,6 +76,8 @@
         v-for="post in filteredPosts"
         :key="post.slug"
         :to="'blog/'+post.slug"
+        router
+        no-prefetch
       >
         <PostLabel
           :post="post"

@@ -43,6 +43,8 @@
         v-for="project in filteredProjects"
         :key="project.path"
         :to="'projects/'+project.slug"
+        router
+        no-prefetch
       >
         <ProjectLabel
           :project="project"
