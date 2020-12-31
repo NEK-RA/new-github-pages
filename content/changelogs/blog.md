@@ -1,2 +1,1 @@
-# Version 1
-- Changelog added
+Changelog is empty

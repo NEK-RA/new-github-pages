@@ -14,7 +14,9 @@
               Changelog
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              <nuxt-content :document="log" />
+              <v-card-text>
+                <nuxt-content :document="log" />
+              </v-card-text>
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
