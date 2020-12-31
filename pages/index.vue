@@ -101,8 +101,8 @@ export default {
       user: {
         name: 'NEK-RA',
         avatar: {
-          url: 'https://i.comss.pics/2020/11/29/100x100-min.th.jpg',
-          type: 'other'
+          url: '/avatars/nekra64.jpg',
+          type: 'asset'
         },
         shortly: 'Beginner developer, a little bit everything',
         tags: [
