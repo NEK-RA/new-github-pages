@@ -42,7 +42,8 @@
       <nuxt-link
         v-for="project in filteredProjects"
         :key="project.path"
-        :to="'projects/'+project.slug"
+        :to="'/projects/'+project.slug"
+        exact
         router
         no-prefetch
       >

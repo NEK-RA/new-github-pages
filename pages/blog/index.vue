@@ -75,7 +75,8 @@
       <nuxt-link
         v-for="post in filteredPosts"
         :key="post.slug"
-        :to="'blog/'+post.slug"
+        :to="'/blog/'+post.slug"
+        exact
         router
         no-prefetch
       >
