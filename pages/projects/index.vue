@@ -62,7 +62,7 @@ export default {
     ProjectLabel
   },
   async asyncData ({ $content }) {
-    const projects = await $content('projects').only(['title', 'description', 'icon', 'version', 'platform', 'lang', 'status', 'slug']).fetch()
+    const projects = await $content('projects').only(['title', 'description', 'icon', 'version', 'platform', 'lang', 'status', 'slug']).sortBy('status').fetch()
     return {
       projects
     }
