@@ -3,6 +3,9 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
+  router: {
+    base: '/new-github-pages/'
+  },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
